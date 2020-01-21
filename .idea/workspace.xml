@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fe2e6ec8-6141-457b-9270-ebb735de0536" name="Default Changelist" comment="" />
+    <list default="true" id="fe2e6ec8-6141-457b-9270-ebb735de0536" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,6 +24,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1WiiUu9h3rwtKqGb4mgQwUKx2US" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -31,6 +35,11 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static/bathroomapp" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="bathroomproject" type="Python.DjangoServer" factoryName="Django server">
@@ -80,7 +89,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1579638834454</updated>
-      <workItem from="1579638856371" duration="989000" />
+      <workItem from="1579638856371" duration="2272000" />
     </task>
     <servers />
   </component>
@@ -92,25 +101,29 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="453" y="271" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1440.877@0.23.1440.877" timestamp="1579639038801" />
-    <state width="1358" height="217" key="GridCell.Tab.0.bottom" timestamp="1579639928796">
+    <state width="1358" height="217" key="GridCell.Tab.0.bottom" timestamp="1579642093284">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1358" height="217" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1579639928796" />
-    <state width="1358" height="217" key="GridCell.Tab.0.center" timestamp="1579639928795">
+    <state width="1358" height="217" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1579642093284" />
+    <state width="1358" height="217" key="GridCell.Tab.0.center" timestamp="1579642093281">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1358" height="217" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1579639928795" />
-    <state width="1358" height="217" key="GridCell.Tab.0.left" timestamp="1579639928794">
+    <state width="1358" height="217" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1579642093281" />
+    <state width="1358" height="217" key="GridCell.Tab.0.left" timestamp="1579642093280">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1358" height="217" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1579639928794" />
-    <state width="1358" height="217" key="GridCell.Tab.0.right" timestamp="1579639928795">
+    <state width="1358" height="217" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1579642093280" />
+    <state width="1358" height="217" key="GridCell.Tab.0.right" timestamp="1579642093282">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1358" height="217" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1579639928795" />
+    <state width="1358" height="217" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1579642093282" />
     <state x="229" y="100" key="SettingsEditor" timestamp="1579638941130">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="229" y="100" key="SettingsEditor/0.23.1440.877@0.23.1440.877" timestamp="1579638941130" />
+    <state x="320" y="201" key="Vcs.Push.Dialog.v2" timestamp="1579640813791">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="320" y="201" key="Vcs.Push.Dialog.v2/0.23.1440.877@0.23.1440.877" timestamp="1579640813791" />
   </component>
 </project>
