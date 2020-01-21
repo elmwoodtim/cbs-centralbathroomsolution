@@ -11,3 +11,12 @@ def home(request):
     data['date'] = datetime.date.today()
 
     return render(request, "home.html", context=data)
+
+def login(request):
+    return render(request, "login.html")
+
+def new_user_register(request):
+    return render(request, "register.html")
+
+def guest(request):
+    return render(request, "guest.html")
