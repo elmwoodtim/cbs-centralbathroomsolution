@@ -2,9 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Guest</title>
+    <title>Title</title>
 </head>
 <body>
-Guest text
+
+<h1>Hi Guest User!</h1>
+
+<h3>
+    Please register below:<br>
+
+    <form action="{% url 'guest_data' %}" method="get">
+        Dear user, what is your name?
+        <input type="text" name="user.name"><br>
+        And your city? <input type="text" name="user.city"><br>
+        When is your birthday? <input type="date" name="user.dob"><br>
+        What is your email? <input type="email" name="user.email"><br>
+        <input type="submit" value="Submit" name="Submit">
+        <input type="submit" value="Cancel" name="Cancel">
+    </form>
+
+</h3>
 </body>
 </html>

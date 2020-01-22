@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<body>
+<h1>Create an account</h1>
+
+<h3>
+    Please register below:<br>
+</h3>
+
+<form method="post">
+    {% csrf_token %}
+    First name: <input name="fname" type="text" required><br>
+    Last name: <input name="lname" type="text" required><br>
+    {{ form.as_p }}
+    Email: <input name="email" type="email" required><br>
+    <button type="submit">Register</button>
+</form>
+
+
+</body>
+</html>

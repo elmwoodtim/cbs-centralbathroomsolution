@@ -1,4 +1,8 @@
 from django.shortcuts import render
+from django.contrib.auth.forms import UserCreationForm
+from django.shortcuts import HttpResponseRedirect
+from django.urls import reverse
+from bathroomapp.models import AppUser
 
 # Create your views here.
 
@@ -25,13 +29,44 @@ def loggedin(request):
     data=dict()
     return render(request, "loggedIn.html", context=data)
 
-def new_user_register(request):
-    return render(request, "register.html")
-
 def guest(request):
     return render(request, "guest.html")
 
-def guest_stuff(request):
-    data = dict()
-    return render(request, "guest_stuff.html", context=data)
+def guest_data(request):
+    try:
+        request.GET['Cancel']
+        return render(request, 'home.html')
+    except:
+        pass
 
+    data = dict()
+    name = request.GET['user.name']
+    city = request.GET['user.city']
+    dob = request.GET['user.dob']
+    email = request.GET['user.email']
+    data['name'] = name
+    data['city'] = city
+    data['dob'] = dob
+    data['email'] = email
+    return render(request, "guest_data.html", context=data)
+
+def register_user(request):
+    data = dict()
+    form = UserCreationForm(request.POST)
+    if form.is_valid():
+        new_user = form.save()
+        email = request.POST['email']
+        first_name = request.POST['fname']
+        last_name = request.POST['lname']
+        new_user.first_name = first_name
+        new_user.last_name = last_name
+        new_user.email = email
+        new_user.save()
+        acct_holder = AppUser(user=new_user)
+        acct_holder.points = 1000
+        acct_holder.save()
+        return HttpResponseRedirect(reverse("home"))
+    else:
+        form = UserCreationForm()
+        data['form'] = form
+        return render(request, "registration/register.html", context=data)

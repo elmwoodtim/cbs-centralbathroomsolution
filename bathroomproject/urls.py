@@ -23,8 +23,8 @@ urlpatterns = [
     path('home', views.home, name='home'),
     path('', views.home, name='home'),
     path('login',LoginView.as_view(), name='login'),
-    path('register',views.new_user_register,name='user_registration'),
-    path('guest',views.guest,name='guest'),
-    path('loggedIn',views.loggedin,name='loggedIn'),
-    path('guest_stuff',views.guest_stuff,name='guest_stuff')
+    path('register',views.register_user, name='register'),
+    path('guest',views.guest, name='guest'),
+    path('loggedIn',views.loggedin, name='loggedIn'),
+    path('guest_data',views.guest_data, name='guest_data')
 ]
