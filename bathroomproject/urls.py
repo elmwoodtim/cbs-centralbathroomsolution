@@ -16,12 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from bathroomapp import views
+from django.contrib.auth.views import LoginView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('home', views.home, name='home'),
     path('', views.home, name='home'),
-    path('login',views.login, name='login'),
+    path('login',LoginView.as_view(), name='login'),
     path('register',views.new_user_register,name='user_registration'),
-    path('guest',views.guest,name='guest')
+    path('guest',views.guest,name='guest'),
+    path('loggedIn',views.loggedin,name='loggedIn'),
+    path('guest_stuff',views.guest_stuff,name='guest_stuff')
 ]
