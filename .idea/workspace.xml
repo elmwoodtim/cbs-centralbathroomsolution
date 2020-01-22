@@ -2,17 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fe2e6ec8-6141-457b-9270-ebb735de0536" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/bathroomapp/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/registration/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bathroomapp/migrations/0002_bids_packages.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bathroomapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/bathroomapp/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bathroomapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/bathroomapp/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bathroomproject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/bathroomproject/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/guest.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/guest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/guest_stuff.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/guest_data.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +138,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1579638834454</updated>
-      <workItem from="1579638856371" duration="15341000" />
+      <workItem from="1579638856371" duration="17334000" />
+      <workItem from="1579725359648" duration="532000" />
     </task>
     <servers />
   </component>
@@ -163,22 +158,22 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="458" y="215" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.877@0.23.1440.877" timestamp="1579712219816" />
-    <state width="1398" height="217" key="GridCell.Tab.0.bottom" timestamp="1579723405060">
+    <state width="1398" height="217" key="GridCell.Tab.0.bottom" timestamp="1579725356049">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="217" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1579723405060" />
-    <state width="1398" height="217" key="GridCell.Tab.0.center" timestamp="1579723405059">
+    <state width="1398" height="217" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1579725356049" />
+    <state width="1398" height="217" key="GridCell.Tab.0.center" timestamp="1579725356048">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="217" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1579723405059" />
-    <state width="1398" height="217" key="GridCell.Tab.0.left" timestamp="1579723405059">
+    <state width="1398" height="217" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1579725356048" />
+    <state width="1398" height="217" key="GridCell.Tab.0.left" timestamp="1579725356047">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="217" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1579723405059" />
-    <state width="1398" height="217" key="GridCell.Tab.0.right" timestamp="1579723405060">
+    <state width="1398" height="217" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1579725356047" />
+    <state width="1398" height="217" key="GridCell.Tab.0.right" timestamp="1579725356048">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="217" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1579723405060" />
+    <state width="1398" height="217" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1579725356048" />
     <state x="229" y="100" key="SettingsEditor" timestamp="1579643732082">
       <screen x="0" y="23" width="1440" height="877" />
     </state>

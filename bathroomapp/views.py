@@ -65,7 +65,7 @@ def register_user(request):
         acct_holder = AppUser(user=new_user)
         acct_holder.points = 1000
         acct_holder.save()
-        return HttpResponseRedirect(reverse("home"))
+        return HttpResponseRedirect(reverse("login"))
     else:
         form = UserCreationForm()
         data['form'] = form
