@@ -8,11 +8,8 @@
 
 {% extends 'base.html' %}
 {% block content %}
-    <h2>When nature calls...</h2> <br>
-    <h1>CBS - Central Bathroom Solution</h1>
-
     <img src="{{ STATIC_URL }}static/bathroomapp/cbs-logo.png" / ><br>
-
+    <h2>When nature calls...</h2> <br>
     <a href="{% url 'login' %}">Login</a><br>
     <a href="{% url 'register' %}">Register</a><br>
     <a href="{% url 'guest' %}">Guest</a><br>

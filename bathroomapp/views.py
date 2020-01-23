@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import HttpResponseRedirect
 from django.urls import reverse
-from bathroomapp.models import AppUser
+from bathroomapp.models import AppUser, Packages, Bathroom, Bids
 
 # Create your views here.
 
@@ -26,7 +26,10 @@ def login(request):
     return render(request, "registration/login.html")
 
 def loggedin(request):
-    data=dict()
+    data = dict()
+    user = request.user
+    if user.is_superuser:
+        return render(request, "admin_ops.html", context=data)
     return render(request, "loggedIn.html", context=data)
 
 def guest(request):
@@ -77,3 +80,66 @@ def resort_finder(request):
     resorts = get_resorts()
     data['data'] = resorts
     return render(request, "resorts.html", context=data)
+
+def do_admin_stuff(request):
+    data = dict()
+    file = request.GET['file']
+    print(file)
+
+    try:
+        request.GET['packages']
+        file = "static/bathroomapp/" + file
+        with open(file,'r') as f:
+            for line in f:
+                line = line.strip().split(',')
+                pid = line[0]
+                try:
+                    p = Packages.objects.get(packageId=pid)
+                except:
+                    p = Packages(packageId=pid)
+                p.description = line[1]
+                p.location = line[2]
+                p.latitude = float(line[3])
+                p.longitude = float(line[4])
+                p.min_bid = int(line[5])
+                p.save()
+        data['message'] = "Completed bulk update of packages!"
+        return render(request, "admin_ops.html", context=data)
+    except:
+        pass
+
+    try:
+        request.GET['bathroom']
+        file = "static/bathroomapp/" + file
+        with open(file,'r') as f:
+            for line in f:
+                line = line.strip().split(',')
+                bId = line[0]
+                try:
+                    b = Bathroom.objects.get(bathroomId=bId)
+                except:
+                    b = Bathroom(bathroomId=bId)
+                b.description = line[1]
+                b.location = line[2]
+                b.latitude = float(line[3])
+                b.longitude = float(line[4])
+                b.gender = line[5]
+                b.numStall = int(line[6])
+                b.numUrinal = int(line[7])
+                b.ratingOverall = int(line[8])
+                b.ratingClean = int(line[9])
+                b.ratingConv = int(line[10])
+                b.save()
+        data['message'] = "Completed bulk update of bathrooms!"
+        return render(request, "admin_ops.html", context=data)
+    except:
+        pass
+
+    try:
+        request.GET['users']
+        data['message'] = "Completed bulk update of users!"
+        return render(request, "admin_ops.html", context=data)
+    except:
+        pass
+    data['message'] = "Unknown action!"
+    return render(request, "admin_ops.html", context=data)
