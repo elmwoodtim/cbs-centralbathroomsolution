@@ -4,6 +4,7 @@ from django.shortcuts import HttpResponseRedirect
 from django.urls import reverse
 from bathroomapp.models import AppUser, Packages, Bathroom, Bids
 
+
 # Create your views here.
 
 def home(request):
@@ -22,8 +23,10 @@ def home(request):
 
     return render(request, "home.html", context=data)
 
+
 def login(request):
     return render(request, "registration/login.html")
+
 
 def loggedin(request):
     data = dict()
@@ -32,8 +35,10 @@ def loggedin(request):
         return render(request, "admin_ops.html", context=data)
     return render(request, "loggedIn.html", context=data)
 
+
 def guest(request):
     return render(request, "guest.html")
+
 
 def guest_data(request):
     try:
@@ -52,6 +57,7 @@ def guest_data(request):
     data['dob'] = dob
     data['email'] = email
     return render(request, "guest_data.html", context=data)
+
 
 def register_user(request):
     data = dict()
@@ -74,6 +80,7 @@ def register_user(request):
         data['form'] = form
         return render(request, "registration/register.html", context=data)
 
+
 def resort_finder(request):
     from bathroomapp.support_functions import get_resorts
     data = dict()
@@ -81,15 +88,14 @@ def resort_finder(request):
     data['data'] = resorts
     return render(request, "resorts.html", context=data)
 
+
 def do_admin_stuff(request):
     data = dict()
-    file = request.GET['file']
-    print(file)
-
     try:
         request.GET['packages']
+        file = request.GET['file']
         file = "static/bathroomapp/" + file
-        with open(file,'r') as f:
+        with open(file, 'r') as f:
             for line in f:
                 line = line.strip().split(',')
                 pid = line[0]
@@ -107,11 +113,11 @@ def do_admin_stuff(request):
         return render(request, "admin_ops.html", context=data)
     except:
         pass
-
     try:
-        request.GET['bathroom']
+        request.GET['bathrooms']
+        file = request.GET['file']
         file = "static/bathroomapp/" + file
-        with open(file,'r') as f:
+        with open(file, 'r') as f:
             for line in f:
                 line = line.strip().split(',')
                 bId = line[0]
@@ -134,12 +140,12 @@ def do_admin_stuff(request):
         return render(request, "admin_ops.html", context=data)
     except:
         pass
-
     try:
         request.GET['users']
+        file = request.GET['file']
+        file = "static/bathroomapp/" + file
         data['message'] = "Completed bulk update of users!"
         return render(request, "admin_ops.html", context=data)
     except:
         pass
-    data['message'] = "Unknown action!"
     return render(request, "admin_ops.html", context=data)
