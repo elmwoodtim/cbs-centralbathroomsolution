@@ -6,22 +6,17 @@
 </head>
 <body>
 
-Today's date is: {{ date }} <br>
-<h2>When nature calls...</h2> <br>
+{% extends 'base.html' %}
+{% block content %}
+    <h2>When nature calls...</h2> <br>
+    <h1>CBS - Central Bathroom Solution</h1>
 
-    {% for person in people %}
-        Name: {{ person.0 }}, City: {{ person.1 }}<br>
-    {% endfor %}
+    <img src="{{ STATIC_URL }}static/bathroomapp/cbs-logo.png" / ><br>
 
-<h1>CBS - Central Bathroom Solution</h1>
-
-<img src="{{ STATIC_URL }}static/bathroomapp/cbs-logo.png" / >
-
-<br>
-
-<a href="{% url 'login' %}">Login</a><br>
-<a href="{% url 'register' %}">Register</a><br>
-<a href="{% url 'guest' %}">Guest</a><br>
+    <a href="{% url 'login' %}">Login</a><br>
+    <a href="{% url 'register' %}">Register</a><br>
+    <a href="{% url 'guest' %}">Guest</a><br>
+{% endblock %}
 
 </body>
 </html>

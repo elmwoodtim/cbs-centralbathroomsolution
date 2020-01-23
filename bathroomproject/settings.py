@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
-    'bathroomapp.apps.BathroomappConfig',
+    'leaflet',
+    'bathroomapp.apps.BathroomappConfig'
 ]
 
 MIDDLEWARE = [

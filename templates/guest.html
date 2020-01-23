@@ -6,6 +6,8 @@
 </head>
 <body>
 
+{% extends 'base.html' %}
+{% block content %}
 <h1>Hi Guest User!</h1>
 
 <h3>
@@ -24,5 +26,7 @@
     To see our resort offers, please click <a href="{% url 'resorts' %}">here</a>!
 
 </h3>
+{% endblock %}
+
 </body>
 </html>

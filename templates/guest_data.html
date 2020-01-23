@@ -6,10 +6,13 @@
 </head>
 <body>
 
+{% extends 'base.html' %}
+{% block content %}
 Hello, {{ name }}<br>
 Your email is: {{ email }}<br>
 Looks like you're from {{ city }}.<br>
 Your birthday is: {{ dob }}<br>
+{% endblock %}
 
 </body>
 </html>

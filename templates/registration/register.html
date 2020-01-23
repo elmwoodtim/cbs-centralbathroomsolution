@@ -5,6 +5,9 @@
     <title>Register</title>
 </head>
 <body>
+
+{% extends 'base.html' %}
+{% block content %}
 <h1>Create an account</h1>
 
 <h3>
@@ -19,7 +22,7 @@
     Email: <input name="email" type="email" required><br>
     <button type="submit">Register</button>
 </form>
-
+{% endblock %}
 
 </body>
 </html>

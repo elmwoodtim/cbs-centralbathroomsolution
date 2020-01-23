@@ -1,0 +1,28 @@
+h1 a { /* format of an a tag inside an h1 tag */
+    color: coral;
+    font-family: 'Lobster';
+}
+
+.large-font { /* use with class="large-font" */
+    font-size: large;
+    color: crimson;
+}
+
+#footer { /* use with id = "footer" */
+    display:inline-block;
+    width:100%;
+    height:1em;
+    padding: 2em 0.25em;
+    text-align: center;
+    font-size: xx-small;
+}
+
+#map {
+    height: 20%;
+    width: 500px;
+}
+
+td {
+    text-align: left;
+    padding: 8px;
+}
