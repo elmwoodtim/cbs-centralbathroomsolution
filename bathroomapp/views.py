@@ -70,3 +70,10 @@ def register_user(request):
         form = UserCreationForm()
         data['form'] = form
         return render(request, "registration/register.html", context=data)
+
+def resort_finder(request):
+    from bathroomapp.support_functions import get_resorts
+    data = dict()
+    resorts = get_resorts()
+    data['data'] = resorts
+    return render(request, "resorts.html", context=data)

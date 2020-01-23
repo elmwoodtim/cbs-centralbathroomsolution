@@ -26,5 +26,6 @@ urlpatterns = [
     path('register',views.register_user, name='register'),
     path('guest',views.guest, name='guest'),
     path('loggedIn',views.loggedin, name='loggedIn'),
-    path('guest_data',views.guest_data, name='guest_data')
+    path('guest_data',views.guest_data, name='guest_data'),
+    path('resorts',views.resort_finder, name='resorts')
 ]
