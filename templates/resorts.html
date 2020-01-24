@@ -1,31 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Resorts</title>
-</head>
-<body>
 
 {% extends 'base.html' %}
 {% block content %}
-<h2>Resort Packages available for purchase!</h2>
+    <h2>Resort Packages available for purchase!</h2>
 
-<table>
-    <tr>
-        <th>Location</th>
-        <th>Description</th>
-        <th>Price</th>
-        <th>Rating</th>
-    </tr>
-    {% for d in data %}
+    <table>
         <tr>
-            <td>{{ d.0 }}</td>
-            <td>{{ d.2 }}</td>
-            <td>{{ d.3 }}</td>
-            <td>{{ d.4 }}</td>
+            <th>Location</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Rating</th>
         </tr>
-    {% endfor %}
-</table>
+        {% for d in data %}
+            <tr>
+                <td>{{ d.0 }}</td>
+                <td>{{ d.2 }}</td>
+                <td>{{ d.3 }}</td>
+                <td>{{ d.4 }}</td>
+            </tr>
+        {% endfor %}
+    </table>
 {% endblock %}
-</body>
-</html>

@@ -1,17 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
 
 {% extends 'base.html' %}
 {% block content %}
 <h1>Hi Guest User!</h1>
 
 <h3>
-    Please register below:<br>
+    Please register below:<br></h3>
 
     <form action="{% url 'guest_data' %}" method="get">
         Dear user, what is your name?
@@ -22,11 +15,7 @@
         <input type="submit" value="Submit" name="Submit">
         <input type="submit" value="Cancel" name="Cancel">
     </form>
+    <br>
 
     To see our resort offers, please click <a href="{% url 'resorts' %}">here</a>!
-
-</h3>
 {% endblock %}
-
-</body>
-</html>

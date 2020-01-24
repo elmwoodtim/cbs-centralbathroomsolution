@@ -1,13 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Login Successful</title>
-</head>
-<body>
+
 {% extends 'base.html' %}
 {% block content %}
-Hi {{ user }}. You've successfully logged in!
+    <p>Hi {{ user }}. You've successfully logged in!</p>
+
+    <h2>Currently available packages:</h2><br>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Location</th>
+            <th>Description</th>
+            <th>Minimum Bid</th>
+        </tr>
+        {% for p in packages %}
+            <tr>
+                <td>{{ p.0 }}</td>
+                <td>{{ p.2 }}</td>
+                <td>{{ p.1 }}</td>
+                <td>{{ p.3 }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <br>
+
+    <h2>Current list of all bathrooms:</h2><br>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Description</th>
+            <th>Location</th>
+            <th>Gender</th>
+            <th>Overall Rating</th>
+        </tr>
+        {% for b in bathrooms %}
+            <tr>
+                <td>{{ b.0 }}</td>
+                <td>{{ b.2 }}</td>
+                <td>{{ b.1 }}</td>
+                <td>{{ b.3 }}</td>
+                <td>{{ b.4 }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <br>
+
+    <a href="">A link to a map</a><br>
+    <a href="">A link to a bidding page</a><br>
+
 {% endblock %}
-</body>
-</html>

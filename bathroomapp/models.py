@@ -30,7 +30,7 @@ class Bathroom(models.Model):
     ratingConv = models.IntegerField()
 
     def __str__(self):
-        return self.bathroomId + " " + self.gender + " " + self.ratingOverall
+        return self.bathroomId + " " + self.description + " " + self.gender + " " + str(self.ratingOverall)
 
 
 class Packages(models.Model):

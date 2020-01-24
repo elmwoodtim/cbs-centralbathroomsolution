@@ -33,6 +33,19 @@ def loggedin(request):
     user = request.user
     if user.is_superuser:
         return render(request, "admin_ops.html", context=data)
+
+    packages = Packages.objects.all()
+    packages_list = list()
+    for p in packages:
+        packages_list.append([p.packageId,p.description,p.location,p.min_bid])
+    data['packages'] = packages_list
+
+    bathrooms = Bathroom.objects.all()
+    bathrooms_list = list()
+    for b in bathrooms:
+        bathrooms_list.append([b.bathroomId, b.location, b.description, b.gender, b.ratingOverall])
+    data['bathrooms'] = bathrooms_list
+
     return render(request, "loggedIn.html", context=data)
 
 

@@ -7,12 +7,16 @@
     {% load leaflet_tags %}
 
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>CBS - Central Bathroom Solution</title>
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap-theme.min.css">
     <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext'rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/grids-responsive-min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
     <link rel="stylesheet" href="{% static 'bathroomapp/style.css' %}">
 
     {% leaflet_js %}
@@ -22,19 +26,44 @@
 
 <body>
 
-    <div class="page-header">
-        <h1><a href="/">CBS - Central Bathroom Solution</a></h1>
+    <div class="header">
+        <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+            <a class="pure-menu-heading" href="/"><img width="100" alt="CBS" class="pure-img-responsive" src="{{ STATIC_URL }}static/bathroomapp/cbs-logo.png"></a>
+            <ul class="pure-menu-list">
+                <li class="pure-menu-item"><a href="{% url 'login' %}" class="pure-menu-link">Login</a></li>
+                <li class="pure-menu-item"><a href="{% url 'register' %}" class="pure-menu-link">Register</a></li>
+                <li class="pure-menu-item"><a href="{% url 'guest' %}" class="pure-menu-link">Guest</a></li>
+            </ul>
+        </div>
     </div>
-    <div class="content-container">
-        <div class="row">
-            <div class="col-md-8">
-                {% block content %}
-                {% endblock %}
+
+    <div class="splash-container">
+        <div class="splash">
+            <h1 class="splash-head">When nature calls...</h1>
+            <p class="splash-subhead">
+                Find the nearest public restroom when you most need it.
+            </p>
+            <p>
+                <a href="" class="pure-button pure-button-primary">Find Bathrooms</a><br><br>
+                <a href="" class="pure-button pure-button-primary">Add Bathroom</a><br><br>
+                <a href="" class="pure-button pure-button-primary">Review Bathroom</a><br><br>
+            </p>
+        </div>
+    </div>
+
+    <div class="content-wrapper">
+        <div class="content">
+            <h2 class="content-head is-center">Subheader Text</h2>
+            <div class="row">
+                <div class="col-md-8">
+                    {% block content %}
+                    {% endblock %}
+                </div>
             </div>
         </div>
     </div>
 
-    <div id="footer">
+    <div class="footer l-box is-center">
         © 2020 CBS. All Rights Reserved.
     </div>
 
