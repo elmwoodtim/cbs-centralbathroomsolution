@@ -30,5 +30,6 @@ urlpatterns = [
     path('guest_data', views.guest_data, name='guest_data'),
     path('resorts', views.resort_finder, name='resorts'),
     path('admin_operations', views.do_admin_stuff, name='do_admin_stuff'),
-    path('logout/', LogoutView.as_view(), name='logout')
+    path('logout/', LogoutView.as_view(), name='logout'),
+    path('bathroom_map', views.bathroom_map, name='bathroom_map')
 ]

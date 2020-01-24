@@ -9,18 +9,6 @@ from bathroomapp.models import AppUser, Packages, Bathroom, Bids
 
 def home(request):
     data = dict()
-    data['help'] = "Help Text"
-    data['yelp'] = "Yelp Text"
-
-    persons = [
-        ["John", "New York"], ["Abby", "Boston"], ["Peter", "Washington D.C."]
-    ]
-
-    data['people'] = persons
-
-    import datetime
-    data['date'] = datetime.date.today()
-
     return render(request, "home.html", context=data)
 
 
@@ -162,3 +150,15 @@ def do_admin_stuff(request):
     except:
         pass
     return render(request, "admin_ops.html", context=data)
+
+
+def bathroom_map(request):
+    data = dict()
+
+    bathrooms = Bathroom.objects.all()
+    bathrooms_list = list()
+    for b in bathrooms:
+        bathrooms_list.append([b.bathroomId, b.location, b.latitude, b.longitude, b.description, b.gender, b.ratingOverall])
+    data['bathrooms'] = bathrooms_list
+
+    return render(request, 'bathroom_map.html', context=data)

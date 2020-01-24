@@ -4,8 +4,10 @@
 /*}*/
 
 #map {
-    height: 20%;
-    width: 500px;
+    position: absolute;
+    height: 75%;
+    width: 75%;
+    margin: 100px;
 }
 
 td {
@@ -154,7 +156,7 @@ a.pure-button-primary {
     overflow: hidden;
     /* The following styles are required for the "scroll-over" effect */
     width: 100%;
-    height: 70%;
+    height: 100%;
     top: 0;
     left: 0;
     position: fixed !important;
@@ -239,6 +241,7 @@ a.pure-button-primary {
 
 /* This is the class used for the footer */
 .footer {
+    z-index: 4;
     background: #111;
     position: fixed;
     bottom: 0;

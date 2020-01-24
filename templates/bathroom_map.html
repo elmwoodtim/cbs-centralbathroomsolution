@@ -1,0 +1,58 @@
+{%  extends 'base.html' %}
+{% block content %}
+{% load leaflet_tags %}
+
+    <script type="text/javascript">
+    function map_init_basic(map) {
+
+        map.setView([40.808562, -73.963397], 16);
+
+        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        maxZoom: 18,
+        id: 'mapbox/streets-v11',
+        accessToken: 'pk.eyJ1IjoiZWxtd29vZHRvbSIsImEiOiJjazVzZjZuenYwbmk3M2ttajY3enNvc251In0.UWrJQTgPZw_ucGNlvaLtWg'
+        }).addTo(map);
+
+        {#map.setView(new L.LatLng({{ lat }}, {{ lng }}),1);#}
+        {#for (var i=1;i<results.length;i++) {#}
+        {#    marker = new L.marker([results[i][2],results[i][3]], {title: results[i][1]}).addTo(map);#}
+        {#    marker.bindTooltip(results[i][0], {#}
+        {#        permanent: false,#}
+        {#        offset: [0, 0]#}
+        {#    });#}
+        {#    marker.bindPopup(results[i][1]);#}
+        {#}#}
+    }
+
+
+    </script>
+
+    {% leaflet_map "map" callback="window.map_init_basic" %}
+
+    <h2>Current list of all bathrooms:</h2><br>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Description</th>
+            <th>Location</th>
+            <th>Latitude</th>
+            <th>Longitude</th>
+            <th>Gender</th>
+            <th>Overall Rating</th>
+        </tr>
+        {% for b in bathrooms %}
+            <tr>
+                <td>{{ b.0 }}</td>
+                <td>{{ b.4 }}</td>
+                <td>{{ b.1 }}</td>
+                <td>{{ b.2 }}</td>
+                <td>{{ b.3 }}</td>
+                <td>{{ b.5 }}</td>
+                <td>{{ b.6 }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <br>
+
+{% endblock %}

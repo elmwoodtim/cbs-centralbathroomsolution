@@ -1,5 +1,17 @@
 
 {% extends 'base.html' %}
 {% block content %}
-    <h2>Home text</h2> <br>
+    <div class="splash-container">
+        <div class="splash">
+            <h1 class="splash-head">When nature calls...</h1>
+            <p class="splash-subhead">
+                Find the nearest public restroom when you most need it.
+            </p>
+            <p>
+                <a href="{% url 'bathroom_map' %}" class="pure-button pure-button-primary">Find Bathrooms</a><br><br>
+                <a href="{% url 'bathroom_map' %}" class="pure-button pure-button-primary">Add Bathroom</a><br><br>
+                <a href="{% url 'bathroom_map' %}" class="pure-button pure-button-primary">Review Bathroom</a><br><br>
+            </p>
+        </div>
+    </div>
 {% endblock %}
