@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h2>Add a Bathroom</h2> <br>
+
+
+<form action="{% url 'add_bathroom' %}" method="get">
+    Where are you right now? Drop a pin
+    #interactive maps
+
+    Is the bathroom men's, women's, or unisex?
+
+    <form action="" method="post" accept-charset="utf-8">
+        <select name="gender" id="gender" class="multiselect" multiple="multiple">
+            <option value="Women" selected="selected">Women</option>
+            <option value="Men" selected="selected">Men</option>
+            <option value="Unisex" selected="selected">Unisex</option>
+        </select>
+
+    </form>
+
+
+    How many stalls are there? <input type="integer" name="stalls"><br>
+</form>
+
+
+<label for="yes_no_radio">Is there a code required?</label>
+
+<p>
+<form action="">
+    <input type="radio" name="Code requirement" value="Yes"> Yes<br>
+    <input type="radio" name="Code requirement" value="No"> No<br>
+</form>
+</p>
+
+<p>
+    <label for="yes_no_radio">Is a purchase required?</label>
+<form action="">
+    <input type="radio" name="Code requirement" value="Yes"> Yes<br>
+    <input type="radio" name="Code requirement" value="No"> No<br>
+</form>
+</p>
+
+<form>
+    <input type="submit" value="Submit" name="Submit">
+    <input type="submit" value="Cancel" name="Cancel">
+</form>
+
+</body>
+</html>
