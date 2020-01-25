@@ -1,0 +1,32 @@
+
+{%  extends 'base.html' %}
+{% block content %}
+
+    <h2>Add a Bathroom</h2> <br>
+
+    <form action="{% url 'added_bathroom' %}" method="get">
+        Where are you right now? Drop a pin!<br>
+{#        #interactive maps#}
+        Please describe the bathroom (e.g. name of restaurant): <input type="text" name="b.description" required="required"> <br>
+        Location of bathroom (e.g. cross-street, W96 & Broadway): <input type="text" name="b.location" required="required"> <br>
+        Is the bathroom men's, women's, or unisex?
+        <select name="b.gender" id="b.gender" required="required">
+                <option value="Women" selected="selected">Women</option>
+                <option value="Men" selected="selected">Men</option>
+                <option value="Unisex" selected="selected">Unisex</option>
+        </select><br>
+        Please rate the bathroom from 1 to 5: <input type="integer" name="b.ratingOverall" required="required"> <br>
+        How many stalls are there? <input type="integer" name="b.numStall" required="required"><br>
+        How many urinals are there? <input type="integer" name="b.numUrinal" required="required"><br>
+        Is there a code required?
+        <select name="b.reqCode" id="b.reqCode" required="required">
+            <option value="Yes" selected="selected">Yes</option>
+            <option value="No" selected="selected">No</option>
+        </select>
+        If required, what is the code? <input type="integer" name="b.securityCode"><br>
+        <br>
+        <input type="submit" value="Submit" name="Submit">
+        <input type="submit" value="Cancel" name="Cancel" formnovalidate>
+    </form>
+
+{% endblock %}

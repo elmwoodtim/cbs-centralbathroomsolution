@@ -25,6 +25,8 @@ class Bathroom(models.Model):
     gender = models.CharField(max_length=6)
     numStall = models.IntegerField()
     numUrinal = models.IntegerField()
+    reqCode = models.CharField(max_length=3)
+    securityCode = models.CharField(max_length=10)
     ratingOverall = models.IntegerField()
     ratingClean = models.IntegerField()
     ratingConv = models.IntegerField()

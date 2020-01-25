@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import HttpResponseRedirect
 from django.urls import reverse
-from bathroomapp.models import AppUser, Packages, Bathroom, Bids
+from bathroomapp.models import AppUser, Packages, Bathroom
 
 
 # Create your views here.
@@ -162,3 +162,35 @@ def bathroom_map(request):
     data['bathrooms'] = bathrooms_list
 
     return render(request, 'bathroom_map.html', context=data)
+
+
+def add_bathroom(request):
+    data = dict()
+    return render(request, 'add_bathroom.html', context=data)
+
+def added_bathroom(request):
+    try:
+        request.GET['Cancel']
+        return render(request, 'home.html')
+    except:
+        pass
+
+    data = dict()
+    desc = request.GET['b.description']
+    loc = request.GET['b.location']
+    gender = request.GET['b.gender']
+    ratingovr = request.GET['b.ratingOverall']
+    numstall = request.GET['b.numStall']
+    numurinal = request.GET['b.numUrinal']
+    reqcode = request.GET['b.reqCode']
+    securitycode = request.GET['b.securityCode']
+    data['desc'] = desc
+    data['loc'] = loc
+    data['gender'] = gender
+    data['ratingOvr'] = ratingovr
+    data['numStall'] = numstall
+    data['numUrinal'] = numurinal
+    data['reqCode'] = reqcode
+    data['securityCode'] = securitycode
+
+    return render(request, "added_bathroom.html", context=data)
