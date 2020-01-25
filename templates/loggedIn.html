@@ -3,44 +3,27 @@
 {% block content %}
     <p>Hi {{ user }}. You've successfully logged in!</p>
 
-    <h2>Currently available packages:</h2><br>
-    <table>
-        <tr>
-            <th>Id</th>
-            <th>Location</th>
-            <th>Description</th>
-            <th>Minimum Bid</th>
-        </tr>
-        {% for p in packages %}
-            <tr>
-                <td>{{ p.0 }}</td>
-                <td>{{ p.2 }}</td>
-                <td>{{ p.1 }}</td>
-                <td>{{ p.3 }}</td>
-            </tr>
-        {% endfor %}
-    </table>
-    <br>
+    <p>Please go back home or click <a href="{% url 'bathroom_map' %}">here</a> to view nearby bathrooms!</p>
 
-    <h2>Current list of all bathrooms:</h2><br>
-    <table>
-        <tr>
-            <th>Id</th>
-            <th>Description</th>
-            <th>Location</th>
-            <th>Gender</th>
-            <th>Overall Rating</th>
-        </tr>
-        {% for b in bathrooms %}
-            <tr>
-                <td>{{ b.0 }}</td>
-                <td>{{ b.2 }}</td>
-                <td>{{ b.1 }}</td>
-                <td>{{ b.3 }}</td>
-                <td>{{ b.4 }}</td>
-            </tr>
-        {% endfor %}
-    </table>
-    <br>
+{#    <h2>Current list of all bathrooms:</h2><br>#}
+{#    <table>#}
+{#        <tr>#}
+{#            <th>Id</th>#}
+{#            <th>Description</th>#}
+{#            <th>Location</th>#}
+{#            <th>Gender</th>#}
+{#            <th>Overall Rating</th>#}
+{#        </tr>#}
+{#        {% for b in bathrooms %}#}
+{#            <tr>#}
+{#                <td>{{ b.0 }}</td>#}
+{#                <td>{{ b.2 }}</td>#}
+{#                <td>{{ b.1 }}</td>#}
+{#                <td>{{ b.3 }}</td>#}
+{#                <td>{{ b.4 }}</td>#}
+{#            </tr>#}
+{#        {% endfor %}#}
+{#    </table>#}
+{#    <br>#}
 
 {% endblock %}

@@ -1,0 +1,40 @@
+
+{% extends 'base.html' %}
+{% block content %}
+
+    <h2>Add a Review</h2><br>
+
+    <form action="{% url 'added_review' %}" method="get">
+        Pick a bathroom to review:
+
+        <select name="b.id" id="b.id" required="required">
+            {% for b in bathrooms %}
+                <option value={{ b.3 }} selected="selected">{{ b.0 }}, {{ b.1 }}</option>
+            {% endfor %}
+        </select>
+
+         Don't see your bathroom? Please add bathroom <a href="{% url 'add_bathroom' %}">here</a><br>
+
+        Please rate the bathroom:<br>
+
+        <div class="rate">
+            <input type="radio" id="star5" name="rate" value="5" />
+            <label for="star5" title="text">5 stars</label>
+            <input type="radio" id="star4" name="rate" value="4" />
+            <label for="star4" title="text">4 stars</label>
+            <input type="radio" id="star3" name="rate" value="3" />
+            <label for="star3" title="text">3 stars</label>
+            <input type="radio" id="star2" name="rate" value="2" />
+            <label for="star2" title="text">2 stars</label>
+            <input type="radio" id="star1" name="rate" value="1" />
+            <label for="star1" title="text">1 star</label>
+        </div>
+        <br><br>
+
+        <input type="submit" value="Submit" name="Submit">
+        <input type="submit" value="Cancel" name="Cancel" formnovalidate>
+
+    </form>
+
+
+{% endblock %}

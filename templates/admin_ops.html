@@ -11,9 +11,7 @@
     <p>
     <form action="{% url 'do_admin_stuff' %}" method="get">
         Choose a file for bulk input: <input type="file" name="file"><br><br>
-        <input type="submit" name="packages" value="Bulk update packages"><br><br>
         <input type="submit" name="bathrooms" value="Bulk update bathrooms"><br><br>
-        <input type="submit" name="users" value="Bulk update users"><br><br>
         <br><a href="{% url 'logout' %}">Logout</a>
     </form>
     </p>

@@ -33,5 +33,7 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(), name='logout'),
     path('add_bathroom', views.add_bathroom, name='add_bathroom'),
     path('added_bathroom', views.added_bathroom, name='added_bathroom'),
+    path('add_review', views.add_review, name='add_review'),
+    path('added_review', views.added_review, name='added_review'),
     path('bathroom_map', views.bathroom_map, name='bathroom_map')
 ]

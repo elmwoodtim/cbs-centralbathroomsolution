@@ -92,28 +92,7 @@ def resort_finder(request):
 
 def do_admin_stuff(request):
     data = dict()
-    try:
-        request.GET['packages']
-        file = request.GET['file']
-        file = "static/bathroomapp/" + file
-        with open(file, 'r') as f:
-            for line in f:
-                line = line.strip().split(',')
-                pid = line[0]
-                try:
-                    p = Packages.objects.get(packageId=pid)
-                except:
-                    p = Packages(packageId=pid)
-                p.description = line[1]
-                p.location = line[2]
-                p.latitude = float(line[3])
-                p.longitude = float(line[4])
-                p.min_bid = int(line[5])
-                p.save()
-        data['message'] = "Completed bulk update of packages!"
-        return render(request, "admin_ops.html", context=data)
-    except:
-        pass
+
     try:
         request.GET['bathrooms']
         file = request.GET['file']
@@ -121,11 +100,7 @@ def do_admin_stuff(request):
         with open(file, 'r') as f:
             for line in f:
                 line = line.strip().split(',')
-                bId = line[0]
-                try:
-                    b = Bathroom.objects.get(bathroomId=bId)
-                except:
-                    b = Bathroom(bathroomId=bId)
+                b = Bathroom()
                 b.description = line[1]
                 b.location = line[2]
                 b.latitude = float(line[3])
@@ -178,19 +153,73 @@ def added_bathroom(request):
     data = dict()
     desc = request.GET['b.description']
     loc = request.GET['b.location']
+    lat = request.GET['b.latitude']
+    lng = request.GET['b.longitude']
     gender = request.GET['b.gender']
-    ratingovr = request.GET['b.ratingOverall']
+    ratingovr = request.GET['rate']
     numstall = request.GET['b.numStall']
     numurinal = request.GET['b.numUrinal']
     reqcode = request.GET['b.reqCode']
     securitycode = request.GET['b.securityCode']
     data['desc'] = desc
     data['loc'] = loc
+    data['lat'] = lat
+    data['lng'] = lng
     data['gender'] = gender
-    data['ratingOvr'] = ratingovr
+    data['ratingovr'] = ratingovr
     data['numStall'] = numstall
     data['numUrinal'] = numurinal
     data['reqCode'] = reqcode
     data['securityCode'] = securitycode
 
+    b = Bathroom()
+    b.description = desc
+    b.location = loc
+    b.latitude = lat
+    b.longitude = lng
+    b.gender = gender
+    b.numStall = numstall
+    b.numUrinal = numurinal
+    b.ratingOverall = ratingovr
+    b.save()
+
+    for b in Bathroom.objects.all():
+        print(b)
     return render(request, "added_bathroom.html", context=data)
+
+
+def add_review(request):
+    data = dict()
+
+    bathrooms = Bathroom.objects.all()
+    bathrooms_list = list()
+    for b in bathrooms:
+        bathrooms_list.append(
+            [b.location, b.description, b.ratingOverall, b.bathroomId])
+    data['bathrooms'] = bathrooms_list
+
+    return render(request, "add_review.html", context=data)
+
+
+def added_review(request):
+    try:
+        request.GET['Cancel']
+        return render(request, 'home.html')
+    except:
+        pass
+    data = dict()
+    ratingovr = request.GET['rate']
+
+    id = request.GET["b.id"]
+    b = Bathroom.objects.get(bathroomId=id)
+    b.ratingOverall = ratingovr
+    b.save()
+
+    desc = b.description
+    ratingovr = b.ratingOverall
+    data['desc'] = desc
+    data['ratingovr'] = ratingovr
+    data['id'] = id
+
+    return render(request, "added_review.html",context=data)
+

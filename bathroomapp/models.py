@@ -17,7 +17,7 @@ class AppUser(models.Model):
 
 
 class Bathroom(models.Model):
-    bathroomId = models.CharField(max_length=3)
+    bathroomId = models.AutoField(primary_key=True)
     description = models.CharField(max_length=100)
     location = models.CharField(max_length=50)
     latitude = models.FloatField()
@@ -28,11 +28,9 @@ class Bathroom(models.Model):
     reqCode = models.CharField(max_length=3)
     securityCode = models.CharField(max_length=10)
     ratingOverall = models.IntegerField()
-    ratingClean = models.IntegerField()
-    ratingConv = models.IntegerField()
 
     def __str__(self):
-        return self.bathroomId + " " + self.description + " " + self.gender + " " + str(self.ratingOverall)
+        return str(self.bathroomId) + " " + self.description + " " + self.gender + " " + str(self.ratingOverall)
 
 
 class Packages(models.Model):

@@ -1,21 +1,36 @@
 
 {%  extends 'base.html' %}
 {% block content %}
+{% load leaflet_tags %}
+
 
     <h2>Add a Bathroom</h2> <br>
 
     <form action="{% url 'added_bathroom' %}" method="get">
-        Where are you right now? Drop a pin!<br>
-{#        #interactive maps#}
-        Please describe the bathroom (e.g. name of restaurant): <input type="text" name="b.description" required="required"> <br>
+
+        Please describe the bathroom (e.g. name of hotel, restaurant): <input type="text" name="b.description" required="required"> <br>
         Location of bathroom (e.g. cross-street, W96 & Broadway): <input type="text" name="b.location" required="required"> <br>
+        Location of bathroom (latitude): <input type="text" name="b.latitude" required="required"> <br>
+        Location of bathroom (longitude): <input type="text" name="b.longitude" required="required"> <br>
         Is the bathroom men's, women's, or unisex?
         <select name="b.gender" id="b.gender" required="required">
                 <option value="Women" selected="selected">Women</option>
                 <option value="Men" selected="selected">Men</option>
                 <option value="Unisex" selected="selected">Unisex</option>
         </select><br>
-        Please rate the bathroom from 1 to 5: <input type="integer" name="b.ratingOverall" required="required"> <br>
+        Please rate the bathroom from 1 to 5:<br>
+        <div class="rate">
+            <input type="radio" id="star5" name="rate" value="5" />
+            <label for="star5" title="text">5 stars</label>
+            <input type="radio" id="star4" name="rate" value="4" />
+            <label for="star4" title="text">4 stars</label>
+            <input type="radio" id="star3" name="rate" value="3" />
+            <label for="star3" title="text">3 stars</label>
+            <input type="radio" id="star2" name="rate" value="2" />
+            <label for="star2" title="text">2 stars</label>
+            <input type="radio" id="star1" name="rate" value="1" />
+            <label for="star1" title="text">1 star</label>
+        </div><br><br>
         How many stalls are there? <input type="integer" name="b.numStall" required="required"><br>
         How many urinals are there? <input type="integer" name="b.numUrinal" required="required"><br>
         Is there a code required?
