@@ -14,7 +14,7 @@ gunicorn==20.0.4
 heroku==0.1.4
 html-parser==0.2
 idna==2.8
-lxml==4.4.2
+lxml==4.6.5
 ply==3.11
 psycopg2-binary==2.8.4
 python-dateutil==1.5
